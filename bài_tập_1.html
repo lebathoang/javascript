@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // Câu hỏi: Cho 1 CHUỖI KÝ TỰ: "12, a, b, 1, 0.3, 2, M, -5, -0.7, 16, C, D, 1, 3, c, 2.2, z"
+
+    // 1. Tính tổng các số có trong dãy trên
+    // 2. Lấy ra các số nguyên không trùng nhau và sắp xếp theo thứ tự tăng dần (kết quả: -5, 1, 2, 3, 12, 16)
+    // 3. Lấy ra chuỗi ký tự chỉ bao gồm chữ và sắp xếp theo a-z (kết quả: abcCDMz)
+    // 4. In ra chuỗi trên theo thứ tự z-a từ 9-0 và không trùng nhau (kết quả:  z, M, D, C, c, b, a, 16, 12, 3, 2.2, 2, 1, 0.3, -0.7, -5) 
+
+    // Gợi ý:
+    // - Chuyển chuỗi ký tự về mảng
+    // - Dùng for và if else để lấy ra các số
+    // - Tìm hiểu về phép so sánh chữ, số để có thể sắp xếp
+    // - Tìm hiểu về array push, array includes, indexOf, join, split
+    // * Nhớ phải nghĩ hướng giải quyết trước khi làm
+    var arr = [12, 'a', 'b', 1, 0.3, 2, 'M', -5, -0.7, 16, 'C', 'D', 1, 3, 'c', 2.2, 'z']
+    var integer = []
+    for (i = 0; i < arr.length; i++) {
+      if (arr[i] % 1 == 0) {
+        integer.includes(arr[i]);
+        if (integer.includes(arr[i]) == false) {
+          integer.push(arr[i])
+          integer.sort()
+        }
+      } else {
+
+      }
+    }
+    document.write(integer)
+    // var a=0;
+    // for (i=0; i<arr.length; i++) {
+    //   if (typeof arr[i] == "number") {
+    //     a=a+arr[i]
+    //   }
+    //   else {
+
+    //   }
+    // }
+    // document.write('Tổng ' + a)
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
