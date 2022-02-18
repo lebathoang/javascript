@@ -1,0 +1,9 @@
+Bài tập về function
+1. Viết hàm cho phép truyền tham số là mảng vào và trả ra mảng mới với các phần tử dạng số
+Ví dụ: input = [1,2,'a','b'] và output = [1,2]
+2. Viết hàm kiểm tra xem số được truyền vào là số chẵn hay số lẻ
+Ví dụ: input = 1 và output = 'Số lẻ'
+       input = 2 và output = 'Số chẵn'
+       input = 'x' và output = 'Không xác định'
+       
+* Lưu ý: Đặt tên hàm bằng tiếng anh và có ý nghĩa, đọc tên hàm là người dùng biết được mục đích hàm đó để làm gì
