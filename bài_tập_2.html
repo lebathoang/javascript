@@ -29,8 +29,6 @@
             newArray[i] = x
         }
     };
-
-
     //câu 1:
     function numberFormElement(array) {
         var numberElement = []
@@ -42,15 +40,12 @@
         console.log(numberElement);
     }
     numberFormElement(newArray)
-
-
-
     //câu 2:
     function numberEvenOrOdd(array) {
         for (i = 0; i < array.length; i++) {
-            if (array[i] % 2 == 0) {
+            if (array % 2 == 0) {
                 console.log('số chẵn');
-            } else if (array[i] % 2 == 1) {
+            } else if (array % 2 == 1) {
                 console.log('số lẻ');
             } else {
                 console.log('undefined');
@@ -58,25 +53,7 @@
         }
     }
     numberEvenOrOdd(newArray)
-
-
-    function tinhTrungBinhCong(array) {
-        var tong = 0;
-        for (var i = 0; i < array.length; i++) {
-            tong = tong + array[i];
-        }
-
-        // array.length là số lượng phần tử có trong mảng array
-        var ketQua = tong / array.length;
-        return ketQua;
-    }
-
-    var soNguyen = [1, 2, 3, 4, 6, 9];
-
-    // Tính trung bình cộng các số có trong mảng soNguyen
-    var trungBinhCong = tinhTrungBinhCong(soNguyen);
-
-    console.log('Trung bình cộng của mảng là ' + trungBinhCong);
+    
 </script>
 
 <body>
