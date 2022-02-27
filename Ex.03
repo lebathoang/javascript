@@ -1,0 +1,6 @@
+Bài tập về map, filter, find, reduce
+const arr = [1,2,'a',6,'c',4,'d',9]
+1. Trả ra mảng chỉ chứa các phần tử là chữ, không phải số
+2. Trả ra mảng chỉ chứa các số nhỏ hơn 4
+3. Tính tích của các phần tử trong mảng trên (câu 2)
+4. Viết hàm với tham số đầu vào là 1 số bất kỳ (n), kiểm tra xem số đó có trong mảng arr không. In ra màn hình kết quả, vd: Số n không thuộc mảng arr
