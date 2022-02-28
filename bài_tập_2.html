@@ -18,17 +18,7 @@
 
     // * Lưu ý: Đặt tên hàm bằng tiếng anh và có ý nghĩa, đọc tên hàm là người dùng biết được mục đích hàm đó 
     //         để làm gì
-    var string = "5, h, 3, 11, M, 21, U, 23, y, 19, E, 7, n, 10, 20, I, 24, B, 8"
-    var newArray = string.split(", ")
-    var a = newArray.length
-    for (i = 0; i < a; i++) {
-        var x = newArray[i].trim()
-        if (!isNaN(Number(x))) {
-            newArray[i] = Number(x)
-        } else {
-            newArray[i] = x
-        }
-    };
+    var newArray = [5, 'h', 3, 11, 'M', 21, 'U', 23, 'y', 19, 'E', 7, 'n', 10, 20, 'I', 24, 'B', 8]
     //câu 1:
     function numberFormElement(array) {
         var numberElement = []
@@ -43,10 +33,10 @@
     //câu 2:
     function numberEvenOrOdd(array) {
         for (i = 0; i < array.length; i++) {
-            if (array % 2 == 0) {
-                console.log('số chẵn');
-            } else if (array % 2 == 1) {
-                console.log('số lẻ');
+            if (array[i] % 2 == 0) {
+                console.log('số chẵn :' + array[i]);
+            } else if (array[i] % 2 == 1) {
+                console.log('số lẻ :' + array[i]);
             } else {
                 console.log('undefined');
             }
