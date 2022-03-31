@@ -1,0 +1,107 @@
+.wrap {
+    background-color: rgb(173, 91, 211);
+    height: 700px;
+    width: 1400px;
+    padding-top: 50px;
+    margin-left: 300px;
+    margin-top: 100px;
+    box-shadow: 5px 10px rgb(240, 240, 240);
+}
+.wrap .wrap-1 {
+    background-color: white;
+    width: 1200px;
+    margin-bottom: 50px;
+    margin-left: 100px;
+    margin-right: 300px;
+    border-radius: 5px;
+}
+.wrap .wrap-1 .wrap-2{
+    display: table;
+}
+.wrap .wrap-1 .wrap-2 .wrap-3 {
+    height: 450px;
+    width: 400px;
+    border-right: 1px solid silver;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.wrap .wrap-1 .wrap-2 .wrap-3 .wrap-4 {
+    text-align: center;
+}
+.wrap .wrap-1 .wrap-2 .wrap-3 .wrap-14{
+    padding-left: 120px;
+    text-decoration: none;
+    color: rgb(104, 100, 100);
+}
+.wrap .wrap-1 .wrap-2 .wrap-5 {
+    display: table-cell;
+    vertical-align: top;
+     height: 450px;
+    width: 795px;
+    color: rgb(104, 100, 100);
+}
+.wrap .wrap-1 .wrap-2 .wrap-5 .wrap-6 {
+    display: inline-block;
+    width: 37%;
+}
+.wrap .wrap-1 .wrap-2 .wrap-5 .wrap-6 button {
+    margin-left: 20px;
+    border: 2px;
+    background-color: white;
+}
+.wrap .wrap-1 .wrap-2 .wrap-5 .wrap-8 {
+    display: inline-block;
+    text-align: right;
+    width: 59%;
+    color: black
+}
+.wrap .wrap-1 .wrap-2 .wrap-5 .wrap-9 {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
+.wrap .wrap-1 .wrap-2 .wrap-5 .wrap-9 .wrap-0 {
+    padding: 5px;
+    flex: 1;
+}
+.wrap .wrap-1 .wrap-2 .wrap-5 .wrap-9 .wrap-0 .wrap-10 {
+    border: 1px solid silver;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+.wrap .wrap-1 .wrap-2 .wrap-5 .wrap-9 .wrap-0 .wrap-10 .wrap-11 {
+    border: 0px;
+    width: 200px;
+    line-height: 35px;
+    margin-left: 15px;
+    outline: none;
+}
+.wrap .wrap-1 .wrap-2 .wrap-5 .wrap-9 .wrap-0 .error {
+    border: 1px solid red;
+}
+.wrap .wrap-1 .wrap-2 .wrap-5 .wrap-9 .wrap-0 .wrap-10 .wrap-12 {
+    border: 0px;
+    height: 35px;
+    width:200px;
+    line-height: 35px;
+    margin-left: 15px;
+    outline: none;
+}
+.wrap .wrap-1 .wrap-2 .wrap-5 .wrap-13 {
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+    border: 1px;
+    background-color: rgb(173, 91, 211);
+    color: white;
+    margin: 15px 0px 25px 650px;
+}
+.error-message {
+    color: red;
+    display: none;
+    margin-top: 4px;
+}
+.show {
+    display: flex;
+}
