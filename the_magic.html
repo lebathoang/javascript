@@ -11,84 +11,84 @@
 
 <body>
     <form method="post" action="" id="myform">
-        <div class="wrap">
-            <div class="wrap-1">
-                <div class="wrap-2">
-                    <div class="wrap-3">
+        <div class="outside">
+            <div class="margin">
+                <div class="background-white">
+                    <div class="content-left">
                         <img src="./download.png">
-                        <h3 class="wrap-4">John Doe</h3>
-                        <a href="#" class="wrap-14">john_doe12@bbb.com</a>
-                        <p class="wrap-4">United states</p>
+                        <h3 class="letter">John Doe</h3>
+                        <a href="#" class="link">john_doe12@bbb.com</a>
+                        <p class="letter">United states</p>
                     </div>
-                    <div class="wrap-5">
+                    <div class="content-right">
                         <div>
-                            <div class="wrap-6">
+                            <div class="head-left">
                                 <button type="button" class="wrap-7">
                                     <h3>Back to home</h3>
                                 </button>
                             </div>
-                            <div class="wrap-8">
+                            <div class="head-right">
                                 <h4>Edit Profile</h4>
                             </div>
                         </div>
-                        <div class="wrap-9">
-                            <div class="wrap-0">
-                                <div class="wrap-10" id="error-surname" >
-                                    <span>Surname<input id="surname" type="text" class="wrap-11" value=""></span>
+                        <div class="current">
+                            <div class="content-field">
+                                <div class="content" id="error-surname">
+                                    <span>Surname<input id="surname" type="text" class="input" value=""></span>
                                 </div>
-                                <span class="error-message surname" ></span>
+                                <span class="error-message surname"></span>
                             </div>
-                            <div class="wrap-0">
-                                <div class="wrap-10" id="error-name">
-                                    <span>Name<input id="name" type="text" class="wrap-11" value=""></span>
+                            <div class="content-field">
+                                <div class="content" id="error-name">
+                                    <span>Name<input id="name" type="text" class="input" value=""></span>
                                 </div>
                                 <span class="error-message name"></span>
                             </div>
                         </div>
-                        <div class="wrap-9">
-                            <div class="wrap-0">
-                                <div class="wrap-10" id="error-email">
-                                    <span>Email<input id="email" type="Email" class="wrap-11" value=""></span>
+                        <div class="current">
+                            <div class="content-field">
+                                <div class="content" id="error-email">
+                                    <span>Email<input id="email" type="Email" class="input" value=""></span>
                                 </div>
                                 <span class="error-message email"></span>
                             </div>
-                            <div class="wrap-0">
-                                <div class="wrap-10" id="error-tel"> 
-                                    <span>Tel<input id="tel" type="tel" class="wrap-11" value=""></span>
+                            <div class="content-field">
+                                <div class="content" id="error-tel">
+                                    <span>Tel<input id="tel" type="tel" class="input" value=""></span>
                                 </div>
                                 <span class="error-message tel"></span>
                             </div>
                         </div>
-                        <div class="wrap-9">
-                            <div class="wrap-0">
-                                <div class="wrap-10" id="error-address">
-                                    <span>Address<input id="address" type="text" class="wrap-11" value=""></span>
+                        <div class="current">
+                            <div class="content-field">
+                                <div class="content" id="error-address">
+                                    <span>Address<input id="address" type="text" class="input" value=""></span>
                                 </div>
                                 <span class="error-message address"></span>
                             </div>
-                            <div class="wrap-0">
-                                <div class="wrap-10" id="error-nation">
-                                    <span>Nationality<input id="nationality" type="text" class="wrap-12"></span>
+                            <div class="content-field">
+                                <div class="content" id="error-nationality">
+                                    <span>Nationality<input id="nationality" type="text" class="input"></span>
                                 </div>
-                                <span class="error-message nation"></span>
+                                <span class="error-message nationality"></span>
                             </div>
                         </div>
-                        <div class="wrap-9">
-                            <div class="wrap-0">
-                                <div class="wrap-10" id="error-bank">
-                                    <span>Bank <input id="bank" type="text" class="wrap-11" value=""></span>
+                        <div class="current">
+                            <div class="content-field">
+                                <div class="content" id="error-bank">
+                                    <span>Bank <input id="bank" type="text" class="input" value=""></span>
                                 </div>
                                 <span class="error-message bank"></span>
                             </div>
-                            <div class="wrap-0">
-                                <div class="wrap-10" id="error-number">
-                                    <span>Account number<input id="number" type="number" class="wrap-11" value=""></span>
+                            <div class="content-field">
+                                <div class="content" id="error-acount_number">
+                                    <span>Account number<input id="acount_number" type="number" class="input" value=""></span>
                                 </div>
-                                <span class="error-message number"></span>
+                                <span class="error-message acount_number"></span>
                             </div>
                         </div>
                         <div>
-                            <button type="submit" class="wrap-13">Save Profile</button>
+                            <button type="submit" class="submit">Save Profile</button>
                         </div>
                     </div>
                 </div>
@@ -104,143 +104,28 @@
             address: "",
             nationality: "",
             bank: "",
-            number: ""
-        };
-        var error = {
-            surname: "",
-            name: "",
-            email: "",
-            tel: "",
-            address: "",
-            nationality: "",
-            bank: "",
-            number: ""
+            acount_number: ""
         }
         document.getElementById('myform').addEventListener('submit', function (e) {
             e.preventDefault();
-            var surname = document.getElementById('surname').value
-            obj.surname = surname
-            var elmSurname = document.getElementById('error-surname')
-            var messageSurname = document.getElementsByClassName('error-message surname')[0]
-            if (surname == "") {
-                error.surname = surname
-                elmSurname.classList.add('error')
-                messageSurname.classList.add('show') 
-                messageSurname.innerHTML = 'Vui lòng nhập Surname'
-            }else {
-                elmSurname.classList.remove('error')
-                messageSurname.classList.remove('show')
-                messageSurname.innerHTML = ''
-            }
-
-            var name = document.getElementById('name').value
-            obj.name = name
-            var elmName = document.getElementById('error-name')
-            var messageName = document.getElementsByClassName('error-message name')[0]
-            if (name == "") {
-                errorName = name
-                elmName.classList.add('error')
-                messageName.classList.add('show') 
-                messageName.innerHTML = 'Vui lòng nhập Name'
-            }else {
-                elmName.classList.remove('error')
-                messageName.classList.remove('show')
-                messageName.innerHTML = ''
-            }
-
-            var email = document.getElementById('email').value
-            obj.email = email
-            var elmEmail = document.getElementById('error-email')
-            var messageEmail = document.getElementsByClassName('error-message email')[0]
-            if (email == "") {
-                errorEmail = email
-                elmEmail.classList.add('error')
-                messageEmail.classList.add('show') 
-                messageEmail.innerHTML = 'Vui lòng nhập Email'
-            }else {
-                elmEmail.classList.remove('error')
-                messageEmail.classList.remove('show')
-                messageEmail.innerHTML = ''
-            }
-
-            var tel = document.getElementById('tel').value
-            obj.tel = tel
-            var elmTel = document.getElementById('error-tel')
-            var messageTel = document.getElementsByClassName('error-message tel')[0]
-            if (tel == "") {
-                errorTel = tel
-                elmTel.classList.add('error')
-                messageTel.classList.add('show') 
-                messageTel.innerHTML = 'Vui lòng nhập Tel'
-            }else {
-                elmTel.classList.remove('error')
-                messageTel.classList.remove('show')
-                messageTel.innerHTML = ''
-            }
-
-            var address = document.getElementById('address').value
-            obj.address = address
-            var elmAddress = document.getElementById('error-address')
-            var messageAddress = document.getElementsByClassName('error-message address')[0]
-            if (address == "") {
-                errorAddress = address
-                elmAddress.classList.add('error')
-                messageAddress.classList.add('show') 
-                messageAddress.innerHTML = 'Vui lòng nhập Address'
-            }else {
-                elmAddress.classList.remove('error')
-                messageAddress.classList.remove('show')
-                messageAddress.innerHTML = ''
-            }
-
-            var nationality = document.getElementById('nationality').value
-            obj.nationality = nationality
-            var elmNation = document.getElementById('error-nation')
-            var messageNation = document.getElementsByClassName('error-message nation')[0]
-            if (nationality == "") {
-                errorNation = nationality  
-                elmNation.classList.add('error')
-                messageNation.classList.add('show') 
-                messageNation.innerHTML = 'Vui lòng nhập Nationality'
-            }else {
-                elmNation.classList.remove('error')
-                messageNation.classList.remove('show')
-                messageNation.innerHTML = ''
-            }
-
-            var bank = document.getElementById('bank').value
-            obj.bank = bank
-            var elmBank = document.getElementById('error-bank')
-            var messageBank = document.getElementsByClassName('error-message bank')[0]
-            if (bank == "") {
-                errorBank = bank
-                elmBank.classList.add('error')
-                messageBank.classList.add('show') 
-                messageBank.innerHTML = 'Vui lòng nhập Bank'
-            }else {
-                elmBank.classList.remove('error')
-                messageBank.classList.remove('show')
-                messageBank.innerHTML = ''
-            }
-
-            var number = document.getElementById('number').value
-            obj.number = number
-            var elmNumber = document.getElementById('error-number')
-            var messageNumber = document.getElementsByClassName('error-message number')[0]
-            if (number == "") {
-                errorNumber = number
-                elmNumber.classList.add('error')
-                messageNumber.classList.add('show') 
-                messageNumber.innerHTML = 'Vui lòng nhập Number'
-            }else {
-                elmNumber.classList.remove('error')
-                messageNumber.classList.remove('show')
-                messageNumber.innerHTML = ''
-            }
-
-            console.log(obj);
-            console.log(error);
+            const keys = Object.keys(obj)
+            keys.forEach((fieldName, i) => {
+                var value = document.getElementById(fieldName).value
+                obj[fieldName] = value
+                var elmId = document.getElementById('error-' + fieldName)
+                var elmMessage = document.getElementsByClassName('error-message ' + fieldName)[0]
+                if (value == "") {
+                    elmId.classList.add('error')
+                    elmMessage.classList.add('show')
+                    elmMessage.innerHTML = 'Vui lòng nhập ' + fieldName
+                } else {
+                    elmId.classList.remove('error')
+                    elmMessage.classList.remove('show')
+                    elmMessage.innerHTML = ''
+                }
+            });
         });
+       
     </script>
 </body>
 
