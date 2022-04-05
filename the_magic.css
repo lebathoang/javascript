@@ -68,13 +68,10 @@
     display: none;
     margin-top: 4px;
 }
-.show {
-    display: flex;
-}
 .current {
     display: flex;
     justify-content: space-evenly;
-    padding: 10px;
+    padding: 3px 10px 3px;
 }
 .content-field {
     padding: 5px;
@@ -87,11 +84,15 @@
 }
 .input {
     border: 0px;
-    width: 200px;
+    width: 360px;
     line-height: 35px;
-    margin-left: 15px;
     outline: none;
+    font-size: 15px;
 }
-.error {
+.content-field.error .content {
     border: 1px solid red;
+}
+.content-field .error-message {
+    display: flex;
+    margin-top: 4px;
 }

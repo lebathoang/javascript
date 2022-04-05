@@ -32,59 +32,59 @@
                             </div>
                         </div>
                         <div class="current">
-                            <div class="content-field">
-                                <div class="content" id="error-surname">
-                                    <span>Surname<input id="surname" type="text" class="input" value=""></span>
+                            <div class="content-field" id="surname">
+                                <div class="content">
+                                    <input type="text" class="input" value="" placeholder="Surname" onchange="myFunction(this)" name="surname">
                                 </div>
-                                <span class="error-message surname"></span>
+                                <span class="error-message"></span>
                             </div>
-                            <div class="content-field">
-                                <div class="content" id="error-name">
-                                    <span>Name<input id="name" type="text" class="input" value=""></span>
+                            <div class="content-field" id="name">
+                                <div class="content">
+                                    <input type="text" class="input" value="" placeholder="Name" onchange="myFunction(this)" name="name">
                                 </div>
-                                <span class="error-message name"></span>
-                            </div>
-                        </div>
-                        <div class="current">
-                            <div class="content-field">
-                                <div class="content" id="error-email">
-                                    <span>Email<input id="email" type="Email" class="input" value=""></span>
-                                </div>
-                                <span class="error-message email"></span>
-                            </div>
-                            <div class="content-field">
-                                <div class="content" id="error-tel">
-                                    <span>Tel<input id="tel" type="tel" class="input" value=""></span>
-                                </div>
-                                <span class="error-message tel"></span>
+                                <span class="error-message"></span>
                             </div>
                         </div>
                         <div class="current">
-                            <div class="content-field">
-                                <div class="content" id="error-address">
-                                    <span>Address<input id="address" type="text" class="input" value=""></span>
+                            <div class="content-field" id="email">
+                                <div class="content">
+                                    <input type="Email" class="input" value="" placeholder="Email" onchange="myFunction(this)" name="email">
                                 </div>
-                                <span class="error-message address"></span>
+                                <span class="error-message"></span>
                             </div>
-                            <div class="content-field">
-                                <div class="content" id="error-nationality">
-                                    <span>Nationality<input id="nationality" type="text" class="input"></span>
+                            <div class="content-field" id="tel">
+                                <div class="content">
+                                    <input type="tel" class="input" value="" placeholder="Tel" onchange="myFunction(this)" name="tel">
                                 </div>
-                                <span class="error-message nationality"></span>
+                                <span class="error-message"></span>
                             </div>
                         </div>
                         <div class="current">
-                            <div class="content-field">
-                                <div class="content" id="error-bank">
-                                    <span>Bank <input id="bank" type="text" class="input" value=""></span>
+                            <div class="content-field" id="address">
+                                <div class="content">
+                                    <input type="text" class="input" value="" placeholder="Address" onchange="myFunction(this)" name="address">
                                 </div>
-                                <span class="error-message bank"></span>
+                                <span class="error-message"></span>
                             </div>
-                            <div class="content-field">
-                                <div class="content" id="error-acount_number">
-                                    <span>Account number<input id="acount_number" type="number" class="input" value=""></span>
+                            <div class="content-field" id="nationality">
+                                <div class="content">
+                                    <input type="text" class="input" value="" placeholder="Nationality" onchange="myFunction(this)" name="nationality">
                                 </div>
-                                <span class="error-message acount_number"></span>
+                                <span class="error-message"></span>
+                            </div>
+                        </div>
+                        <div class="current">
+                            <div class="content-field" id="bank">
+                                <div class="content">
+                                    <input type="text" class="input" value="" placeholder="Bank" onchange="myFunction(this)" name="bank">
+                                </div>
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="content-field" id="acount_number">
+                                <div class="content">
+                                    <input type="number" class="input" value="" placeholder="Acount-Number" onchange="myFunction(this)" name="acount_number">
+                                </div>
+                                <span class="error-message"></span>
                             </div>
                         </div>
                         <div>
@@ -106,26 +106,47 @@
             bank: "",
             acount_number: ""
         }
-        document.getElementById('myform').addEventListener('submit', function (e) {
+        function myFunction(element) {
+            var value = element.value.trim()
+            var fieldName = element.name
+            var elmWrap = document.getElementById(fieldName)
+            var elmErrorMessage = elmWrap.getElementsByClassName('error-message')[0]
+            if (value == "") {
+                elmWrap.classList.add('error')
+                elmErrorMessage.innerHTML = 'Vui lòng nhập ' + fieldName
+            } else {
+                elmWrap.classList.remove('error')
+                elmErrorMessage.innerHTML = ''
+            }
+        }
+
+        document.getElementById('myform').addEventListener('submit'.trim(), function (e) {
             e.preventDefault();
             const keys = Object.keys(obj)
             keys.forEach((fieldName, i) => {
-                var value = document.getElementById(fieldName).value
-                obj[fieldName] = value
-                var elmId = document.getElementById('error-' + fieldName)
-                var elmMessage = document.getElementsByClassName('error-message ' + fieldName)[0]
+                var elmWrap = document.getElementById(fieldName);
+                var value = elmWrap.getElementsByClassName('input')[0].value
+                var elmErrorMessage = elmWrap.getElementsByClassName('error-message')[0]
                 if (value == "") {
-                    elmId.classList.add('error')
-                    elmMessage.classList.add('show')
-                    elmMessage.innerHTML = 'Vui lòng nhập ' + fieldName
+                    elmWrap.classList.add('error')
+                    elmErrorMessage.innerHTML = 'Vui lòng nhập ' + fieldName
                 } else {
-                    elmId.classList.remove('error')
-                    elmMessage.classList.remove('show')
-                    elmMessage.innerHTML = ''
+                    obj[fieldName] = value
+                    elmWrap.classList.remove('error')
+                    elmErrorMessage.innerHTML = ''
                 }
+            })
+            var elmValue = Object.values(obj)
+            var elmFind = elmValue.find(function(x) {
+                return x == ""
             });
+            if (elmFind == undefined) {
+                alert('Bạn đã gửi thông tin thành công')
+                window.location.reload()
+            }
+            return
         });
-       
+
     </script>
 </body>
 
