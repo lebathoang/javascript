@@ -1,0 +1,47 @@
+.outside {
+  background-color: rgb(36, 105, 184);
+  height: 450px;
+  width: 800px;
+  padding-top: 70px;
+  margin: auto;
+  border-radius: 20px;
+}
+.outside .background {
+  background-color: ghostwhite;
+  height: 320px;
+  width: 320px;
+  border-radius: 30px;
+  margin-left: 230px;
+  line-height: 15px;
+}
+.outside .background .header {
+  font-size: 30px;
+  text-align: center;
+  line-height: 80px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.outside .background input {
+  background-color: rgb(192, 212, 243);
+  line-height: 30px;
+  border-radius: 30px;
+  margin: 5px 0px 5px 30px;
+  width: 250px;
+  padding-left: 15px;
+  border: 0px;
+}
+.outside .background button {
+  background-color: rgb(18, 135, 252);
+  height: 35px;
+  width: 270px;
+  border: 2px;
+  border-radius: 30px;
+  margin: 5px 0px 0px 30px;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.error {
+  border: 1px solid red;
+}
+.error-message {
+  color: red;
+}

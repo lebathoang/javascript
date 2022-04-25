@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./login_form.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" action="" id="myform">
+        <div class="outside">
+            <div class="background">
+                <div class="header">Login form</div>
+                <div id="email">
+                    <input type="email" placeholder="Enter email" value="" class="input" onchange="myFuntion(this)" name="email">
+                    <span class="error-message"></span>
+                </div>
+                <div id="password">
+                    <input type="password" placeholder="Enter password" value="" class="input" onchange="myFuntion(this)" name="password">
+                    <span class="error-message"></span>
+                </div>
+                <div id="confirm_password">
+                    <input type="password" placeholder="Confirm password" value="" class="input" onchange="myFuntion(this)" name="confirm_password">
+                    <span class="error-message"></span>
+                </div>
+                <button type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+    <script>
+        var obj = {
+            email: "",
+            password: "",
+            confirm_password: ""
+        }
+
+        function myFuntion(element) {
+            var value = element.value.trim()
+            var fielname = element.name
+            var elmWrap = document.getElementById(fielname)
+            var elmError = elmWrap.getElementsByClassName('input')[0]
+            var elmErrorMessage = elmWrap.getElementsByClassName('error-message')[0]
+            if (value == "") {
+                elmError.classList.add('error')
+                elmErrorMessage.classList.add('error-message')
+                elmErrorMessage.innerHTML = "Vui lòng nhập" + fielname
+            } else {
+                elmError.classList.remove('error')
+                elmErrorMessage.classList.remove('error-message')
+                elmErrorMessage.innerHTML = ""
+            }
+            return
+        }
+
+        document.getElementById('myform').addEventListener('submit', function (a) {
+            a.preventDefault();
+            const key = Object.keys(obj)
+            key.forEach((fielname, i) => {
+                var elmWrap = document.getElementById(fielname);
+                var value = elmWrap.getElementsByClassName('input')[0].value.trim()
+                var elmError = elmWrap.getElementsByClassName('input')[0]
+                var elmErrorMessage = elmWrap.getElementsByClassName('error-message')[0]
+                console.log(elmErrorMessage);
+                if (value == "") {
+                    elmError.classList.add('error')
+                    elmErrorMessage.classList.add('error-message')
+                    elmErrorMessage.innerHTML = "Vui lòng nhập: " + fielname
+                } else {
+                    elmError.classList.remove('error')
+                    elmErrorMessage.classList.remove('error-message')
+                    elmErrorMessage.innerHTML = ""
+                }
+            });
+            
+        });
+    </script>
+</body>
+
+</html>

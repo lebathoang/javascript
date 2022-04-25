@@ -16,9 +16,9 @@
                 <div class="background-white">
                     <div class="content-left">
                         <img src="./download.png">
-                        <h3 class="letter">John Doe</h3>
-                        <a href="#" class="link">john_doe12@bbb.com</a>
-                        <p class="letter">United states</p>
+                        <h3 class="letter" id="fullname">Họ và tên: </h3>
+                        <a href="#" class="link" id="show_email">Email: </a>
+                        <p class="letter" id="show_national">Nationality: </p>
                     </div>
                     <div class="content-right">
                         <div>
@@ -62,13 +62,21 @@
                         <div class="current">
                             <div class="content-field" id="address">
                                 <div class="content">
-                                    <input type="text" class="input" value="" placeholder="Address" onchange="myFunction(this)" name="address">
+                                    <textarea class="input" value="" onchange="myFunction(this)" placeholder="Address" name="address">
+                                    </textarea>
                                 </div>
                                 <span class="error-message"></span>
                             </div>
                             <div class="content-field" id="nationality">
                                 <div class="content">
-                                    <input type="text" class="input" value="" placeholder="Nationality" onchange="myFunction(this)" name="nationality">
+                                    <select name="nationality" id="select" value="" onchange="myFunction(this)" class="input">
+                                        <option value="">Nationality</option>
+                                        <option value="vn">Viet Nam</option>
+                                        <option value="us">United States</option>
+                                        <option value="en">England</option>
+                                        <option value="jp">Japan</option>
+                                        <option value="sp">Spain</option>      
+                                    </select>
                                 </div>
                                 <span class="error-message"></span>
                             </div>
@@ -82,13 +90,13 @@
                             </div>
                             <div class="content-field" id="acount_number">
                                 <div class="content">
-                                    <input type="number" class="input" value="" placeholder="Acount-Number" onchange="myFunction(this)" name="acount_number">
+                                    <input type="text" class="input" value="" placeholder="Acount-Number" onchange="myFunction(this)" name="acount_number">
                                 </div>
                                 <span class="error-message"></span>
                             </div>
                         </div>
                         <div>
-                            <button type="submit" class="submit">Save Profile</button>
+                            <button type="submit" class="submit" id="submitbtn" >Save Profile</button>
                         </div>
                     </div>
                 </div>
@@ -106,6 +114,10 @@
             bank: "",
             acount_number: ""
         }
+        
+        var elmFullName = document.getElementById('fullname')
+        var elmEmail = document.getElementById('show_email')
+        var elmNational = document.getElementById('show_national')
         function myFunction(element) {
             var value = element.value.trim()
             var fieldName = element.name
@@ -115,17 +127,28 @@
                 elmWrap.classList.add('error')
                 elmErrorMessage.innerHTML = 'Vui lòng nhập ' + fieldName
             } else {
+                obj[fieldName] = value
                 elmWrap.classList.remove('error')
                 elmErrorMessage.innerHTML = ''
             }
+            if (fieldName == 'surname' || fieldName == 'name') {
+                elmFullName.innerHTML = 'Họ và tên: ' + obj.surname + ' ' + obj.name
+            }
+            if (fieldName == 'email') {
+                elmEmail.innerHTML = 'Email: ' + obj.email
+            }
+            if (fieldName == 'nationality') {
+                elmNational.innerHTML = 'Nationality: ' + obj.nationality
+            }
         }
-
-        document.getElementById('myform').addEventListener('submit'.trim(), function (e) {
+         
+        var elmButton = document.getElementById('submitbtn')
+        document.getElementById('myform').addEventListener('submit', function (e) {
             e.preventDefault();
             const keys = Object.keys(obj)
             keys.forEach((fieldName, i) => {
                 var elmWrap = document.getElementById(fieldName);
-                var value = elmWrap.getElementsByClassName('input')[0].value
+                var value = elmWrap.getElementsByClassName('input')[0].value.trim()
                 var elmErrorMessage = elmWrap.getElementsByClassName('error-message')[0]
                 if (value == "") {
                     elmWrap.classList.add('error')
@@ -137,12 +160,19 @@
                 }
             })
             var elmValue = Object.values(obj)
-            var elmFind = elmValue.find(function(x) {
+            var elmFind = elmValue.find(function (x) {
                 return x == ""
             });
             if (elmFind == undefined) {
-                alert('Bạn đã gửi thông tin thành công')
-                window.location.reload()
+                elmButton.innerHTML = 'Đang xử lý ...'
+                elmButton.disabled = true
+                setTimeout(() => {
+                    alert('Bạn đã gửi thông tin thành công')
+                    e.target.reset()
+                    elmFullName.innerHTML = 'Họ và tên: '
+                    elmEmail.innerHTML = 'Email: '
+                    elmNational.innerHTML = 'Nationality: ' 
+                }, 3000);
             }
             return
         });

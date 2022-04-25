@@ -63,6 +63,9 @@
     color: white;
     margin: 15px 0px 25px 650px;
 }
+.outside .margin .background-white .content-right .submit:disabled {
+    background-color: gray;
+}
 .error-message {
     color: red;
     display: none;
@@ -95,4 +98,17 @@
 .content-field .error-message {
     display: flex;
     margin-top: 4px;
+}
+.content select {
+    border: 0px;
+    width: 365px;
+    height: 37px;
+    font-size: 15px;
+    color: rgb(104, 100, 100);
+}
+.content textarea {
+    border: 0px;
+    width: 361px;
+    height: 29px;
+    color: rgb(104, 104, 104);
 }

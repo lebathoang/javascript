@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+      // function doGetTEXT() {
+      //     fetch("https://jsonplaceholder.typicode.com/todos/1", {
+      //       method: "POST",
+      //       body: {
+      //         username: "lebathoang",
+              
+      //       }
+      //     })
+      //     .then(function(response) {
+      //       console.log("OK! Server returns a response object:");
+      //       console.log(response);
+      //       if (!response.ok) {
+      //         throw new Error("HTTP error, status = " + response.status)
+      //       }
+      //       return response.json();
+      //     })
+      //     .then(function(myText) {
+      //       console.log("Text:");
+      //       console.log(myText);
+      //     })
+      //     .catch(function(error) {
+      //       console.log("Noooo! Something error:");
+      //       console.log(error);
+      //     })
+      //   return
+      // }
+    
+    const pg = document.getElementById("pagination")
+    const valuePage = {
+      truncate: true,
+      curPage: 1,
+      numLinkTwoSide: 1,
+      totalPage: 10
+    };
+  </script>
+</head>
+
+<body>
+  <div id="pagination"></div>
+
+  <!-- <h3>fetch get text</h3>
+  <p style="color:red"  >
+  Click the button and see the results in the Console
+  </p>
+  <button onclick="doGetTEXT()">doGetJSON()</button> -->
+  <script src="get-text-example-way2.js">
+    // function User() {
+    //   this.username = '';
+    //   this.password = '';
+
+    //   this.setInfo = function(username, password) {
+    //     this.username = username;
+    //     this.password = password;
+    //   };
+
+    //   this.checkLogin = function() {
+    //     return (this.username === 'admin' && this.password === '@123'); 
+    //   };
+    //   return this
+    // }
+    // var user = new User()
+    // user.setInfo('admin', '@123');
+    // if (user.checkLogin()) {
+    //   console.log('Đăng nhập thành công');
+    // } else {
+    //   console.log('Đăng nhập thất bại');
+    // }
+
+    
+    // fetch('examples/example.json')
+    //   .then(function (response) {
+    //     if (!response.ok) { 
+    //       throw Error(response.statusText);
+    //     }
+    //     return response.json();
+    //   })
+    //   .then(function (responseAsJson) {
+    //       console.log(responseAsJson);
+    //   })
+    //   .catch(function (error) {
+    //     console.log('Looks like there was a problem: \n', error);
+    //   });
+
+    
+    // console.log('Trước khi khởi tạo');
+    // new Promise(function (resolve, reject) {
+    //   console.log('Khởi tạo promise');
+    //   resolve(234)
+    // })
+    //   .then(function (number) {
+    //     console.log('Số nhận được là ' + number);
+    //     throw new Error('Có một lỗi đã xảy ra')
+    //     console.log('Chạy chỗ này');
+    //   })
+    //   .catch(function (errorMessage) {
+    //     console.error('Catch với tham số lỗi ' + errorMessage);
+    //     return 456
+    //   })
+    //   .then(function (number) {
+    //     console.log('Số tiếp theo nhận được là ' + number);
+    //   })
+    // console.log('Sau khi khởi tạo');
+  </script>
+</body>
+
+</html>
