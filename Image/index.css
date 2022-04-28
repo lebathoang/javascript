@@ -55,7 +55,7 @@
   font-size: 20px;
   margin: auto;
   margin-top: 50px;
-  display: block;
+  /* display: block; */
 }
 .title {
   position: relative;
