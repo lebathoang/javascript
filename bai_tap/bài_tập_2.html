@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //     Bài tập về function
+    //     1. Viết hàm cho phép truyền tham số là mảng vào và trả ra mảng mới với các phần tử dạng số
+    //       Ví dụ: input = [1,2,'a','b'] và output = [1,2]
+    //     2. Viết hàm kiểm tra xem số được truyền vào là số chẵn hay số lẻ
+    //       Ví dụ: input = 1 và output = 'Số lẻ'
+    //          input = 2 và output = 'Số chẵn'
+    //          input = 'x' và output = 'Không xác định'
+
+    // * Lưu ý: Đặt tên hàm bằng tiếng anh và có ý nghĩa, đọc tên hàm là người dùng biết được mục đích hàm đó 
+    //         để làm gì
+    var newArray = [5, 'h', 3, 11, 'M', 21, 'U', 23, 'y', 19, 'E', 7, 'n', 10, 20, 'I', 24, 'B', 8]
+    //câu 1:
+    function numberFormElement(array) {
+        var numberElement = []
+        for (i = 0; i < array.length; i++) {
+            if (typeof array[i] == "number") {
+                numberElement.push(array[i])
+            }
+        }
+        console.log(numberElement);
+    }
+    numberFormElement(newArray)
+    //câu 2:
+    function numberEvenOrOdd(array) {
+        for (i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                console.log('số chẵn :' + array[i]);
+            } else if (array[i] % 2 == 1) {
+                console.log('số lẻ :' + array[i]);
+            } else {
+                console.log('undefined');
+            }
+        }
+    }
+    numberEvenOrOdd(newArray)
+    
+</script>
+
+<body>
+
+</body>
+
+</html>
